@@ -1,0 +1,16 @@
+on:
+  workflow_call:
+    inputs:
+      print-inputs:
+        description: print input variables
+        required: false
+        default: false
+        type: boolean
+      environment:
+        description: deploy to this environment
+        required: true
+        type: string
+      cluster:
+        description: cluster to deploy to
+        required: true
+        type: string
