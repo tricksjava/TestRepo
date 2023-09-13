@@ -14,3 +14,14 @@ on:
         description: cluster to deploy to
         required: true
         type: string
+- if: inputs.print-inputs
+  run: |
+    {
+      echo "### :rocket: Workflow inputs"
+      echo "| Arg                 | Value |"
+      echo "| ------------------- | ----- |"
+      echo "| Print inputs        | ${{ inputs.print-inputs }} |"
+      echo "| Environment         | ${{ inputs.environment }} |"
+      echo "| Cluster             | ${{ inputs.cluster }} |"
+    } >> $GITHUB_STEP_SUMMARY        
+        
